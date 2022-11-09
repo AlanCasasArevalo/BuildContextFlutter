@@ -16,13 +16,22 @@ class GlobalKeyPage extends StatelessWidget {
           textDirection: TextDirection.rtl,
           children: [
             Row(
-              children: [Text('Hola aMigos'), Icon(Icons.ac_unit)],
+              children: [
+                Text('Hola aMigos'),
+                Icon(Icons.ac_unit),
+              ],
             ),
             Row(
-              children: [Text('Hola que pasa'), Icon(Icons.access_alarm)],
+              children: [
+                Text('Hola que pasa'),
+                Icon(Icons.access_alarm),
+              ],
             ),
             Row(
-              children: [Text('Merluzos'), Icon(Icons.account_balance_outlined)],
+              children: [
+                Text('Merluzos'),
+                Icon(Icons.account_balance_outlined),
+              ],
             ),
           ],
         ),
