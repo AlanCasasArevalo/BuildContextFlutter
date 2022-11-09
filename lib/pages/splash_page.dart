@@ -12,7 +12,11 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    _init();
+    // Este mixin nos permite esperar a que el siguiente frame haya sido renderizado, por tanto es como si
+    // esperase hasta que la vista estuviera instanciada para poder realizar la primera carga de datos
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _init();
+    });
   }
 
   Future<void> _init() async {
