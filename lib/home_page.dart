@@ -5,7 +5,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Esta funcion findAncestorWidgetOfExactType nos devuelve el padre que encuentre (siempre del tipo generico que le especifiquemos)
     final materialAppContext = context.findAncestorWidgetOfExactType<MaterialApp>();
+    final sizeBoxContext = context.findAncestorWidgetOfExactType<SizedBox>();
     print('El contexto de material app $materialAppContext');
+    print('El contexto de sizeBox $sizeBoxContext');
+    print('El contexto de sizeBox ${sizeBoxContext?.width}');
     return Scaffold(
       appBar: AppBar(),
     );
