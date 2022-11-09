@@ -1,10 +1,10 @@
+import 'package:build_context/utils/screen_utils.dart';
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = context.findAncestorWidgetOfExactType<MediaQuery>();
-    final screenSize = mediaQuery?.data.size;
+    final screenSize = getScreenSize(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Contexts'),
