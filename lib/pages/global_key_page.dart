@@ -56,6 +56,9 @@ class GlobalKeyPage extends StatelessWidget {
   }
 
   void _printTextSize() {
+    // Se imprime el contexto del Text en el que esta
     print(_textKey.currentContext);
+    // Se imprime el estado del Text en el que esta, OJO SI ES UN STATELESSWIDGET SERA NUL
+    print(_textKey.currentState);
   }
 }
