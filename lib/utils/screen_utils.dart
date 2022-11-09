@@ -13,4 +13,8 @@ extension ScreenUtilsExtension on BuildContext {
     final screenSize = mediaQueryData.size;
     return screenSize;
   }
+
+  double get statusBarHeight {
+    return mediaQueryData.viewPadding.top;
+  }
 }

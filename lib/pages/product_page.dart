@@ -17,7 +17,7 @@ class ProductPage extends StatelessWidget {
             child: Center(
               child: Text(
                 //Conociendo la altura del status bar
-                '${context.mediaQueryData.viewPadding.top.toString()}',
+                '${context.statusBarHeight.toString()}',
               ),
             ),
           )
