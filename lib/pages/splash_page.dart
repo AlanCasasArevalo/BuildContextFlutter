@@ -1,3 +1,4 @@
+import 'package:build_context/mixins/after_first_layout_mixin.dart';
 import 'package:build_context/pages/home_page.dart';
 import 'package:build_context/utils/screen_utils.dart';
 import 'package:flutter/material.dart';
@@ -7,16 +8,11 @@ class SplashPage extends StatefulWidget {
   State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashPageState extends State<SplashPage> with AfterFirstLayoutMixin {
 
   @override
-  void initState() {
-    super.initState();
-    // Este mixin nos permite esperar a que el siguiente frame haya sido renderizado, por tanto es como si
-    // esperase hasta que la vista estuviera instanciada para poder realizar la primera carga de datos
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _init();
-    });
+  void onAfterFirstLayout() {
+    _init();
   }
 
   Future<void> _init() async {
@@ -36,4 +32,5 @@ class _SplashPageState extends State<SplashPage> {
       ),
     );
   }
+
 }
