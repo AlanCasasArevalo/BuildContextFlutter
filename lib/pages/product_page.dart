@@ -12,8 +12,14 @@ class ProductPage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: screenSize?.height != null ? screenSize!.height * .5 : screenSize?.height,
+            height: screenSize.height * .4,
             color: Colors.grey,
+            child: Center(
+              child: Text(
+                //Conociendo la altura del status bar
+                '${context.mediaQueryData.viewPadding.top.toString()}',
+              ),
+            ),
           )
         ],
       ),
