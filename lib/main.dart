@@ -17,10 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SizedBox(
-        width: 360,
-        child: HomePage(),
-      ),
+      home: HomePage(),
     );
   }
 }

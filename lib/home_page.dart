@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Esta funcion findAncestorWidgetOfExactType nos devuelve el padre que encuentre (siempre del tipo generico que le especifiquemos)
-    final materialAppContext = context.findAncestorWidgetOfExactType<MaterialApp>();
-    final sizeBoxContext = context.findAncestorWidgetOfExactType<SizedBox>();
-    print('El contexto de material app $materialAppContext');
-    print('El contexto de sizeBox $sizeBoxContext');
-    print('El contexto de sizeBox ${sizeBoxContext?.width}');
+    // Con este widget (MediaQuery) se recupera las dimensiones de toda la panalla
+    final mediaQuery = context.findAncestorWidgetOfExactType<MediaQuery>();
+    // podemos recuperar por ejemplo el tamaño del dispositivo en el que se renderiza,
+    // y hace calculos de cuanto queremos que ocupe un widget hijo respecto a las pantallas a renderizar
+    print('El mediaQuery ${mediaQuery?.data.size}');
     return Scaffold(
       appBar: AppBar(),
     );
