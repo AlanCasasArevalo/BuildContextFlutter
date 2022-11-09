@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final screenSize = getScreenSize(context);
+    final screenSize = context.getScreenSize();
     return Scaffold(
       appBar: AppBar(
         title: Text('Contexts'),
