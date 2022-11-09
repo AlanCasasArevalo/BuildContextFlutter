@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 extension ScreenUtilsExtension on BuildContext {
   // Se quita el context como parametro
   Size getScreenSize() {
-    final mediaQuery = this.findAncestorWidgetOfExactType<MediaQuery>();
+    final mediaQuery = findAncestorWidgetOfExactType<MediaQuery>();
     final screenSize = mediaQuery?.data.size;
     if (screenSize != null) {
       return screenSize;
