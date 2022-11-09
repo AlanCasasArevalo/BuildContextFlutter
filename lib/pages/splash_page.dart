@@ -16,6 +16,8 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> _init() async {
+    // Si no realizamos el delay de 100 mls nos saldra una pantalla roja de error
+    await Future.delayed(Duration(milliseconds: 100));
     // Lo que se haria en una aplicacion real llamada a servicios
     // Una vez terminado todos los servicios navegamos a home
     final route = MaterialPageRoute(builder: (_) => HomePage());
