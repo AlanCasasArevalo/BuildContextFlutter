@@ -61,7 +61,7 @@ class GlobalKeyPage extends StatelessWidget {
     // Se imprime el estado del Text en el que esta, OJO SI ES UN STATELESSWIDGET SERA NUL
     // print(_textKey.currentState);
 
-    // OJO esto dara un crash si el _textKey no esta asignado
+    // OJO esto dara un crash si el _textKey no esta asignado o bien el widget se ha renderizado completamente
     final renderBox = _textKey.currentContext!.findRenderObject() as RenderBox;
     // Nos permite saber las dimensiones del texto
     print(renderBox.size);
