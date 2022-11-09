@@ -7,9 +7,14 @@ class HomePage extends StatelessWidget {
     final mediaQuery = context.findAncestorWidgetOfExactType<MediaQuery>();
     // podemos recuperar por ejemplo el tamaño del dispositivo en el que se renderiza,
     // y hace calculos de cuanto queremos que ocupe un widget hijo respecto a las pantallas a renderizar
-    print('El mediaQuery ${mediaQuery?.data.size}');
+    final screenSize = mediaQuery?.data.size;
     return Scaffold(
       appBar: AppBar(),
+      body: Center(
+        child: Text(
+          '${screenSize?.width}x${screenSize?.height}',
+        ),
+      ),
     );
   }
 }
