@@ -10,6 +10,17 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> with AfterFirstLayoutMixin {
 
+  // Hay 2 initState uno el del AfterFirstLayoutMixin y otro el de la propia clase
+  // el orden de su ejecucion depende del super.initState en cada uno de los initStates
+  @override
+  void initState() {
+    // Si hacemos el codigo que queremos ejecutar en por encima del super.initState, este codigo se ejecutara ANTES que el del mixin (AfterFirstLayoutMixin).
+    print('_SplashPageState');
+    super.initState();
+    // Si hacemos el codigo que queremos ejecutar en por debajo del super.initState, este codigo se ejecutara DESPUES que el del mixin (AfterFirstLayoutMixin).
+    // print('_SplashPageState');
+  }
+
   @override
   void onAfterFirstLayout() {
     _init();
