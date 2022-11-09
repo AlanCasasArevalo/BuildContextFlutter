@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart' show State, StatefulWidget, WidgetBinging;
+import 'dart:async';
+import 'package:flutter/widgets.dart' show State, StatefulWidget, WidgetsBinding;
 
 mixin AfterFirstLayoutMixin<T extends StatefulWidget> on State<T> {
   // Con este mixin lo que se pretende es esperar a que se haya renderizado por primera vez la pantalla para despues llamar al metodo onAfterFirstLayout y poder reutilizar el mixin en todos los widgets que queramos
@@ -11,5 +11,5 @@ mixin AfterFirstLayoutMixin<T extends StatefulWidget> on State<T> {
       onAfterFirstLayout();
     });
   }
-  void onAfterFirstLayout();
+  FutureOr<void> onAfterFirstLayout();
 }
