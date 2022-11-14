@@ -66,6 +66,7 @@ class GlobalKeyPage extends StatelessWidget {
 
     // con estas instrucciones lo que conseguimos es la localizacion exacta del widget respecto a su posicion en toda la pantalla
     final position = renderBox.localToGlobal(
+      // Punto de referencia inicio de pantalla superior izquierda
       Offset(0, 0),
     );
     print(position);
