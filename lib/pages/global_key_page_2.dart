@@ -1,15 +1,13 @@
+import 'package:build_context/mixins/mount_mixin.dart';
 import 'package:build_context/pages/home_page.dart';
 import 'package:flutter/material.dart';
-import '../utils/screen_utils.dart';
 
-class GlobalKeyPage2 extends StatelessWidget {
-  // Se crea una key para pasarla en el scaffold y saber si existe aun en el arbol de widgets
-  final _scaffoldKey = GlobalKey();
+class GlobalKeyPage2 extends StatelessWidget  with MountedMixin {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
+      key: widgetKey,
       appBar: AppBar(
         title: Text('GlobalKeyPage'),
       ),
@@ -61,9 +59,9 @@ class GlobalKeyPage2 extends StatelessWidget {
       Duration(seconds: 2),
     );
     // Comprobamos el valor del contexto para comprobar que NO sea nulo y si no lo es podriamos navegar de vuelta
-    if(_scaffoldKey.currentContext != null) {
+    if(mounted) {
       Navigator.push(
-        _scaffoldKey.currentContext!,
+        context,
         MaterialPageRoute(
           builder: (_) => HomePage(),
         ),
