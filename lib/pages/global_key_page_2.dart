@@ -25,9 +25,10 @@ class GlobalKeyPage2 extends StatelessWidget {
   void _showMessage(BuildContext context) {
     showDialog(
       context: context,
-      // Simplemente pasando el contexto del WIDGET PADRE al dialogo evitamos el crash al volver de la ruta que le pusimos
-      builder: (_) {
+      builder: (context) {
+        final _dialogKey = GlobalKey();
         return AlertDialog(
+          key: _dialogKey,
           content: Text('Hola'),
           actions: [
             TextButton(
@@ -38,8 +39,10 @@ class GlobalKeyPage2 extends StatelessWidget {
                     builder: (_) => HomePage(),
                   ),
                 );
-                // Esto nos probocara un crash, debido a que estamos intentando coger el contexto del DIALOGO no de la pantalla anterior, y son diferentes contextos
-                context.size;
+                // Realizando la comprobacion de si el dialogo esta en el arbol de widgets nos evitamos el crash al navegar de vuelta
+                if (_dialogKey.currentWidget != null) {
+                  context.size;
+                }
               },
               child: Text('Go home'),
             )
