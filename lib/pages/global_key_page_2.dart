@@ -25,7 +25,8 @@ class GlobalKeyPage2 extends StatelessWidget {
   void _showMessage(BuildContext context) {
     showDialog(
       context: context,
-      builder: (context) {
+      // Simplemente pasando el contexto del WIDGET PADRE al dialogo evitamos el crash al volver de la ruta que le pusimos
+      builder: (_) {
         return AlertDialog(
           content: Text('Hola'),
           actions: [
