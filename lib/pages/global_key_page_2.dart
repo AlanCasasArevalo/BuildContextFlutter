@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import '../utils/screen_utils.dart';
 
 class GlobalKeyPage2 extends StatelessWidget {
-  final _textKey = GlobalKey();
+  // Se crea una key para pasarla en el scaffold y saber si existe aun en el arbol de widgets
+  final _scaffoldKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('GlobalKeyPage'),
       ),
@@ -22,6 +24,7 @@ class GlobalKeyPage2 extends StatelessWidget {
     );
   }
 
+/*
   void _showMessage(BuildContext context) {
     showDialog(
       context: context,
@@ -50,5 +53,21 @@ class GlobalKeyPage2 extends StatelessWidget {
         );
       },
     );
+  }
+  */
+
+  void _showMessage(BuildContext context) async {
+    await Future.delayed(
+      Duration(seconds: 2),
+    );
+    // Comprobamos el valor del contexto para comprobar que NO sea nulo y si no lo es podriamos navegar de vuelta
+    if(_scaffoldKey.currentContext != null) {
+      Navigator.push(
+        _scaffoldKey.currentContext!,
+        MaterialPageRoute(
+          builder: (_) => HomePage(),
+        ),
+      );
+    }
   }
 }
