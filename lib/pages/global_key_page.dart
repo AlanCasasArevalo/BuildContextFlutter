@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import '../utils/screen_utils.dart';
 
-class GlobalKeyPage extends StatelessWidget {
+class GlobalKeyPage extends StatefulWidget {
+  @override
+  State<GlobalKeyPage> createState() => _GlobalKeyPageState();
+}
+
+class _GlobalKeyPageState extends State<GlobalKeyPage> {
   final _textKey = GlobalKey();
 
   @override
