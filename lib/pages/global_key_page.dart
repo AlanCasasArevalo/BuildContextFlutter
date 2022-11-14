@@ -87,5 +87,10 @@ class _GlobalKeyPageState extends State<GlobalKeyPage> {
 
     // Nos permite saber las dimensiones del texto
     print(renderBox.size);
+
+    // Este getter nos dice si esta o no el widget en el arbol de widgets solo funcionan con los StatefulWidget
+    if(mounted) {
+
+    }
   }
 }
