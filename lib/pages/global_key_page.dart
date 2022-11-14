@@ -63,6 +63,13 @@ class GlobalKeyPage extends StatelessWidget {
 
     // OJO esto dara un crash si el _textKey no esta asignado o bien el widget se ha renderizado completamente
     final renderBox = _textKey.currentContext!.findRenderObject() as RenderBox;
+
+    // con estas instrucciones lo que conseguimos es la localizacion exacta del widget respecto a su posicion en toda la pantalla
+    final position = renderBox.localToGlobal(
+      Offset(0, 0),
+    );
+    print(position);
+
     // Nos permite saber las dimensiones del texto
     print(renderBox.size);
   }
