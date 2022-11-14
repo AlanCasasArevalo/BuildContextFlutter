@@ -37,6 +37,7 @@ class GlobalKeyPage2 extends StatelessWidget {
                     builder: (_) => HomePage(),
                   ),
                 );
+                // Esto nos probocara un crash, debido a que estamos intentando coger el contexto del DIALOGO no de la pantalla anterior, y son diferentes contextos
                 context.size;
               },
               child: Text('Go home'),
